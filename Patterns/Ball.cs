@@ -6,12 +6,23 @@ namespace PatternHW
 {
     public class Ball : Shape
     {
-        public double Radius;
+        public double Radius { get; private set; }
 
-        public Ball(double radius)
+        private Ball(double radius)
         {
             Radius = radius;
             Volume = (4 / 3) * 3.14 * radius * radius * radius;
         }
+
+        public static Ball Initialize(double radius)
+        {
+            if (radius <= 0)
+            {
+                throw new ArgumentException("Invalid size of shape!");
+            }
+
+            return new Ball(radius);
+        }
     }
 }
+

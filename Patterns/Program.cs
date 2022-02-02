@@ -11,12 +11,12 @@ namespace Patterns
         {
             List<Shape> shapes = new List<Shape>
             {
-                new Pyramid(2, 3, 6),
-                new Cylinder(10, 2),
-                new Ball(4)
+                Pyramid.Initialize(2, 3, 6),
+                Cylinder.Initialize(10, 2),
+                Ball.Initialize(4)
             };
 
-            Box box = new Box(200);
+            Box box = Box.Initialize(200);
 
             foreach (Shape item in shapes)
             {

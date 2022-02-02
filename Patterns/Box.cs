@@ -6,11 +6,21 @@ namespace PatternHW
 {
     public class Box
     {
-        private double DrawerVolume;
-
-        public Box(double volume)
+        public double DrawerVolume { get; private set; }
+     
+        private Box(double volume)
         {
             DrawerVolume = volume;
+        }
+
+        public static Box Initialize(double volume)
+        {
+            if (volume <= 0)
+            {
+                throw new ArgumentException("Invalid size of shape!");
+            }
+
+            return new Box(volume);
         }
 
         public bool Add(Shape shape)
